@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Caesar Cipher</h1>
+    </header>
+    <div class="container">
+        <form action="/caesar" method="post">
+            <label for="message">Message:</label>
+            <input type="text" id="message" name="message" required>
+            <label for="key">Key:</label>
+            <input type="number" id="key" name="key" required>
+            <label for="action">Action:</label>
+            <select id="action" name="action">
+                <option value="encrypt">Encrypt</option>
+                <option value="decrypt">Decrypt</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+        {% if caesar_result %}
+            <p><strong>Result:</strong> {{ caesar_result }}</p>
+        {% endif %}
+        <a href="/main" class="button" style="display:block;margin-top:2rem;text-align:center;">Back to Main Menu</a>
+    </div>
+</body>
+</html>

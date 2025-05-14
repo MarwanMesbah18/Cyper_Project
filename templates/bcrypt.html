@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bcrypt Hashing</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Bcrypt Hashing</h1>
+    </header>
+    <div class="container">
+        <form action="/bcrypt" method="post">
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password" required>
+            <button type="submit">Hash</button>
+        </form>
+        {% if bcrypt_result %}
+            <p><strong>Hashed Password:</strong> {{ bcrypt_result }}</p>
+        {% endif %}
+        <a href="/main" class="button" style="display:block;margin-top:2rem;text-align:center;">Back to Main Menu</a>
+    </div>
+</body>
+</html>

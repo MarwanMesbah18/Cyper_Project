@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptography Project</title>
+</head>
+<body>
+    <h1>Cryptography Project</h1>
+
+    <h2>Caesar Cipher</h2>
+    <form action="/caesar" method="post">
+        <label for="message">Message:</label>
+        <input type="text" id="message" name="message" required>
+        <br>
+        <label for="key">Key:</label>
+        <input type="number" id="key" name="key" required>
+        <br>
+        <label for="action">Action:</label>
+        <select id="action" name="action">
+            <option value="encrypt">Encrypt</option>
+            <option value="decrypt">Decrypt</option>
+        </select>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    {% if caesar_result %}
+        <p>Result: {{ caesar_result }}</p>
+    {% endif %}
+
+    <h2>MD5 Hashing</h2>
+    <form action="/hash" method="post">
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password" required>
+        <br>
+        <button type="submit">Hash</button>
+    </form>
+    {% if hash_result %}
+        <p>Hashed Password: {{ hash_result }}</p>
+        <p>Salt: {{ salt }}</p>
+    {% endif %}
+
+    <h2>Fernet Encryption/Decryption</h2>
+    <form action="/fernet" method="post">
+        <label for="message">Message:</label>
+        <input type="text" id="message" name="message" required>
+        <br>
+        <label for="action">Action:</label>
+        <select id="action" name="action">
+            <option value="encrypt">Encrypt</option>
+            <option value="decrypt">Decrypt</option>
+        </select>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    {% if fernet_result %}
+        <p>Result: {{ fernet_result }}</p>
+    {% endif %}
+</body>
+</html>

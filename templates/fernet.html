@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernet Encryption</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Fernet Encryption</h1>
+    </header>
+    <div class="container">
+        <form action="/fernet" method="post">
+            <label for="message">Message:</label>
+            <input type="text" id="message" name="message" required>
+            <label for="action">Action:</label>
+            <select id="action" name="action">
+                <option value="encrypt">Encrypt</option>
+                <option value="decrypt">Decrypt</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+        {% if fernet_result %}
+            <p><strong>Result:</strong> {{ fernet_result }}</p>
+        {% endif %}
+        <a href="/main" class="button" style="display:block;margin-top:2rem;text-align:center;">Back to Main Menu</a>
+    </div>
+</body>
+</html>
