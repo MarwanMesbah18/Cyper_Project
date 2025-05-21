@@ -2,7 +2,7 @@ import hashlib
 import secrets  # Python's built-in module for generating cryptographically secure random numbers
 
 def generate_salt():
-    return secrets.token_bytes(128)
+    return secrets.token_bytes(16)
 
 def md5_hash_password(password, salt):
     # Combine the password and salt, then hash using MD5
